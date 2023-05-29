@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct UserSelectView: View {
+    @EnvironmentObject var coordinator: Coordinator
+    
+    
     var body: some View {
-        Text("User selects other screens")
+        VStack{
+            Group{
+                Button {
+                    coordinator.goToFavouritedScreen()
+                } label: {
+                    Text("Favourite Cards")
+                }
+                
+                Button {
+                    coordinator.goToRandomCardsScreen()
+                } label: {
+                    Text("Random Cards")
+                }
+            }
+            .buttonStyle(.borderedProminent)
+            .padding()
+        }
     }
 }
 

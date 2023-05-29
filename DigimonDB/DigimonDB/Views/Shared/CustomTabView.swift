@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct CustomTabView: View {
+    @Environment(\.managedObjectContext) var viewContext
     var body: some View {
         TabView{
-            MainGridView()
+            MainGridView(digimonViewModel: DigimonCardViewModel(manager: NetworkManager()))
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }
@@ -18,7 +19,7 @@ struct CustomTabView: View {
                 .tabItem {
                     Label("Custom", systemImage: "person.fill")
                 }
-            SettingsView()
+            SettingsView(coreDataManager: CoreDataManager(context: viewContext))
                 .tabItem {
                     Label("Settings", systemImage: "gearshape.fill")
                 }

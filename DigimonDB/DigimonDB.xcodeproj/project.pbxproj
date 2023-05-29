@@ -26,6 +26,17 @@
 		DC45E4D22A24BE2E000478A3 /* DigimonCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4D12A24BE2E000478A3 /* DigimonCardViewModel.swift */; };
 		DC45E4D42A24BE9F000478A3 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4D32A24BE9F000478A3 /* MainCoordinator.swift */; };
 		DC45E4D62A24C041000478A3 /* EntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4D52A24C041000478A3 /* EntryPoint.swift */; };
+		DC45E4D82A24C3CA000478A3 /* DigimonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4D72A24C3CA000478A3 /* DigimonModel.swift */; };
+		DC45E4DB2A24C6BC000478A3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DC45E4DA2A24C6BC000478A3 /* Kingfisher */; };
+		DC45E4DD2A24C72B000478A3 /* NetworkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4DC2A24C72B000478A3 /* NetworkerProtocol.swift */; };
+		DC45E4DF2A24C758000478A3 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4DE2A24C758000478A3 /* NetworkingError.swift */; };
+		DC45E4E12A24C76C000478A3 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4E02A24C76C000478A3 /* Endpoints.swift */; };
+		DC45E4E32A24C872000478A3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4E22A24C872000478A3 /* NetworkManager.swift */; };
+		DC45E4E52A24CDB9000478A3 /* CustomGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4E42A24CDB9000478A3 /* CustomGridCell.swift */; };
+		DC45E4E72A24E62E000478A3 /* CoreDataOperationsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4E62A24E62E000478A3 /* CoreDataOperationsProtocol.swift */; };
+		DC45E4E92A24E64B000478A3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4E82A24E64B000478A3 /* CoreDataManager.swift */; };
+		DC45E4EB2A2510A6000478A3 /* IntroStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC45E4EA2A2510A6000478A3 /* IntroStoryboard.storyboard */; };
+		DC45E4ED2A2510C8000478A3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4EC2A2510C8000478A3 /* IntroViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +79,16 @@
 		DC45E4D12A24BE2E000478A3 /* DigimonCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigimonCardViewModel.swift; sourceTree = "<group>"; };
 		DC45E4D32A24BE9F000478A3 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		DC45E4D52A24C041000478A3 /* EntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPoint.swift; sourceTree = "<group>"; };
+		DC45E4D72A24C3CA000478A3 /* DigimonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigimonModel.swift; sourceTree = "<group>"; };
+		DC45E4DC2A24C72B000478A3 /* NetworkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkerProtocol.swift; sourceTree = "<group>"; };
+		DC45E4DE2A24C758000478A3 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		DC45E4E02A24C76C000478A3 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		DC45E4E22A24C872000478A3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DC45E4E42A24CDB9000478A3 /* CustomGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGridCell.swift; sourceTree = "<group>"; };
+		DC45E4E62A24E62E000478A3 /* CoreDataOperationsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataOperationsProtocol.swift; sourceTree = "<group>"; };
+		DC45E4E82A24E64B000478A3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		DC45E4EA2A2510A6000478A3 /* IntroStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IntroStoryboard.storyboard; sourceTree = "<group>"; };
+		DC45E4EC2A2510C8000478A3 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC45E4DB2A24C6BC000478A3 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +210,7 @@
 		DC45E4BB2A24BD17000478A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DC45E4D72A24C3CA000478A3 /* DigimonModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +220,7 @@
 			children = (
 				DC45E4BE2A24BD5E000478A3 /* Networking */,
 				DC45E4BD2A24BD59000478A3 /* CoreData */,
+				DC45E4E02A24C76C000478A3 /* Endpoints.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -204,6 +228,8 @@
 		DC45E4BD2A24BD59000478A3 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				DC45E4E62A24E62E000478A3 /* CoreDataOperationsProtocol.swift */,
+				DC45E4E82A24E64B000478A3 /* CoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -211,6 +237,9 @@
 		DC45E4BE2A24BD5E000478A3 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				DC45E4DC2A24C72B000478A3 /* NetworkerProtocol.swift */,
+				DC45E4DE2A24C758000478A3 /* NetworkingError.swift */,
+				DC45E4E22A24C872000478A3 /* NetworkManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -218,9 +247,12 @@
 		DC45E4BF2A24BD66000478A3 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				DC45E4E42A24CDB9000478A3 /* CustomGridCell.swift */,
 				DC45E4C32A24BDA0000478A3 /* CustomTabView.swift */,
 				DC45E4C52A24BDBB000478A3 /* DetailsView.swift */,
 				DC45E4D52A24C041000478A3 /* EntryPoint.swift */,
+				DC45E4EA2A2510A6000478A3 /* IntroStoryboard.storyboard */,
+				DC45E4EC2A2510C8000478A3 /* IntroViewController.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -267,6 +299,9 @@
 			dependencies = (
 			);
 			name = DigimonDB;
+			packageProductDependencies = (
+				DC45E4DA2A24C6BC000478A3 /* Kingfisher */,
+			);
 			productName = DigimonDB;
 			productReference = DC45E4862A24BC93000478A3 /* DigimonDB.app */;
 			productType = "com.apple.product-type.application";
@@ -339,6 +374,9 @@
 				Base,
 			);
 			mainGroup = DC45E47D2A24BC93000478A3;
+			packageReferences = (
+				DC45E4D92A24C6BC000478A3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = DC45E4872A24BC93000478A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -355,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC45E4EB2A2510A6000478A3 /* IntroStoryboard.storyboard in Resources */,
 				DC45E4912A24BC94000478A3 /* Preview Assets.xcassets in Resources */,
 				DC45E48E2A24BC94000478A3 /* Assets.xcassets in Resources */,
 			);
@@ -381,19 +420,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC45E4ED2A2510C8000478A3 /* IntroViewController.swift in Sources */,
+				DC45E4E32A24C872000478A3 /* NetworkManager.swift in Sources */,
 				DC45E4932A24BC94000478A3 /* Persistence.swift in Sources */,
+				DC45E4E72A24E62E000478A3 /* CoreDataOperationsProtocol.swift in Sources */,
 				DC45E4CA2A24BDE9000478A3 /* UserSelectView.swift in Sources */,
 				DC45E48C2A24BC93000478A3 /* ContentView.swift in Sources */,
 				DC45E4C82A24BDD6000478A3 /* MainGridView.swift in Sources */,
 				DC45E4CC2A24BDFD000478A3 /* FavouritedCardsView.swift in Sources */,
+				DC45E4DF2A24C758000478A3 /* NetworkingError.swift in Sources */,
+				DC45E4DD2A24C72B000478A3 /* NetworkerProtocol.swift in Sources */,
 				DC45E4D62A24C041000478A3 /* EntryPoint.swift in Sources */,
+				DC45E4E92A24E64B000478A3 /* CoreDataManager.swift in Sources */,
 				DC45E4C42A24BDA0000478A3 /* CustomTabView.swift in Sources */,
 				DC45E48A2A24BC93000478A3 /* DigimonDBApp.swift in Sources */,
 				DC45E4CE2A24BE0C000478A3 /* RandomCardView.swift in Sources */,
 				DC45E4962A24BC94000478A3 /* DigimonDB.xcdatamodeld in Sources */,
+				DC45E4D82A24C3CA000478A3 /* DigimonModel.swift in Sources */,
 				DC45E4C62A24BDBB000478A3 /* DetailsView.swift in Sources */,
 				DC45E4D42A24BE9F000478A3 /* MainCoordinator.swift in Sources */,
+				DC45E4E52A24CDB9000478A3 /* CustomGridCell.swift in Sources */,
 				DC45E4D22A24BE2E000478A3 /* DigimonCardViewModel.swift in Sources */,
+				DC45E4E12A24C76C000478A3 /* Endpoints.swift in Sources */,
 				DC45E4D02A24BE1A000478A3 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,6 +761,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DC45E4D92A24C6BC000478A3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC45E4DA2A24C6BC000478A3 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC45E4D92A24C6BC000478A3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		DC45E4942A24BC94000478A3 /* DigimonDB.xcdatamodeld */ = {

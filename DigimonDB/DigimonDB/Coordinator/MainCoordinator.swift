@@ -10,8 +10,10 @@ import SwiftUI
 
 @MainActor
 class Coordinator: ObservableObject {
+    @Environment(\.managedObjectContext) var viewContext
     
     @Published var navigationPath = NavigationPath()
+    var digimon: DigimonEntity?
     
     func goToMainScreen(){
         navigationPath.append(AppPages.mainGrid)
@@ -21,7 +23,7 @@ class Coordinator: ObservableObject {
         navigationPath.append(AppPages.userSelection)
     }
     
-    func goToFacouritedScreen(){
+    func goToFavouritedScreen(){
         navigationPath.append(AppPages.favouritedCards)
     }
     
@@ -33,22 +35,29 @@ class Coordinator: ObservableObject {
         navigationPath.append(AppPages.settings)
     }
     
+    func goToDetailsScreen(digimon: DigimonEntity){
+        self.digimon = digimon
+        navigationPath.append(AppPages.details)
+    }
+    
     @ViewBuilder
     func getAppPage(page: AppPages) -> some View {
         
         switch page {
         case .mainGrid:
-            MainGridView()
+            MainGridView(digimonViewModel: DigimonCardViewModel(manager: NetworkManager()))
         case .userSelection:
-            MainGridView()
+            UserSelectView()
         case .favouritedCards:
             FavouritedCardsView()
         case .randomCards:
             RandomCardView()
         case .settings:
-            SettingsView()
+            SettingsView(coreDataManager: CoreDataManager(context: viewContext))
         case .tabView:
             CustomTabView()
+        case .details:
+            DetailsView(digimon: self.digimon!)
             
         default:
             EmptyView()
