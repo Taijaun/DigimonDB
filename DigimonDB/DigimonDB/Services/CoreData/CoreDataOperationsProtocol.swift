@@ -11,5 +11,6 @@ protocol CoreDataOperationalProtocol {
     
     func saveDataToDatabase(list: [Digimon]) async throws
     func getDigimonDataFromDatabase() async -> [DigimonEntity]
+    func toggleFavourite(digimon: DigimonEntity)
     
 }

@@ -16,6 +16,7 @@ struct StartScreen: View {
     @State var startOpacity = 0.0
     @Environment(\.managedObjectContext) var viewContext
     @StateObject var digimonViewModel: DigimonCardViewModel
+    let coreDataManager: CoreDataOperationalProtocol
     
     var body: some View {
         VStack{
@@ -54,7 +55,12 @@ struct StartScreen: View {
             }
             
         }.task {
-            await digimonViewModel.getDigimonList(urlString: Endpoints.DigimonCardEndpoint, coreDataManager: CoreDataManager(context: viewContext))
+            let dbList = await coreDataManager.getDigimonDataFromDatabase()
+            if dbList.count == 0 {
+                await digimonViewModel.getDigimonList(urlString: Endpoints.DigimonCardEndpoint, coreDataManager: CoreDataManager(context: viewContext))
+            }
+            
+            
             
             // Print the db file path
             guard let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {return}
@@ -70,7 +76,7 @@ struct StartScreen: View {
     
     struct StartScreen_Previews: PreviewProvider {
         static var previews: some View {
-            StartScreen(digimonViewModel: DigimonCardViewModel(manager: NetworkManager()))
+            StartScreen(digimonViewModel: DigimonCardViewModel(manager: NetworkManager()), coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext))
         }
     }
 }

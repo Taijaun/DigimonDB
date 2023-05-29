@@ -11,4 +11,5 @@ struct Endpoints{
     
     static let DigimonCardEndpoint = "https://digimoncard.io/api-public/search.php?n=Agumon"
     static let defaultImage = "https://static.wikia.nocookie.net/digimoncardgame/images/c/ce/Digimon-Card-Back.png/revision/latest?cb=20210723050545"
+    static let digimonWiki = "https://digimoncardgame.fandom.com/wiki/"
 }

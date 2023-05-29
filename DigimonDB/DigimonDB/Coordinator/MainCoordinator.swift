@@ -63,9 +63,9 @@ class Coordinator: ObservableObject {
         case .tabView:
             CustomTabView()
         case .details:
-            DetailsView(digimon: self.digimon!)
+            DetailsView(digimon: self.digimon!, coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext))
         case .launchScreen:
-            StartScreen(digimonViewModel: DigimonCardViewModel(manager: NetworkManager()))
+            StartScreen(digimonViewModel: DigimonCardViewModel(manager: NetworkManager()), coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext))
             
         default:
             EmptyView()

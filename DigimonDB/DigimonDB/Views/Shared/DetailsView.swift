@@ -11,6 +11,9 @@ import Kingfisher
 struct DetailsView: View {
     var digimon: DigimonEntity
     @State var color: Color?
+    @State private var webViewPresented = false
+    var coreDataManager: CoreDataOperationalProtocol
+    @StateObject var reloadHelper = ReloadViewHelper()
     
     var body: some View {
         VStack{
@@ -39,6 +42,28 @@ struct DetailsView: View {
                                 Text("Main effect")
                                     .font(.subheadline)
                                 Spacer()
+                                if self.digimon.isfavourited != true{
+                                    Button {
+                                        Task{ coreDataManager.toggleFavourite(digimon: digimon)
+                                            reloadHelper.reloadView()
+                                        }
+                                    } label: {
+                                        Image(systemName: "star")
+                                    }
+
+                                } else {
+                                    Button {
+                                        Task{ coreDataManager.toggleFavourite(digimon: digimon)
+                                            reloadHelper.reloadView()
+                                        }
+                                    } label: {
+                                        Image(systemName: "star.fill")
+                                    }
+
+                                }
+                                }
+                            .padding(.bottom, 10)
+
                             }
                             
                             HStack{
@@ -71,6 +96,13 @@ struct DetailsView: View {
                                             )
                                     }
                                     
+                                    Button {
+                                        webViewPresented = true
+                                    } label: {
+                                        Text("Read more..")
+                                    }
+
+                                    
                                 }
                                 // Stack for attribute
                                 
@@ -88,9 +120,10 @@ struct DetailsView: View {
                 }
             }.onAppear(){
                 getShadowColour(digimonColor: digimon.color ?? "")
+            }.sheet(isPresented: $webViewPresented) {
+                WebView(url: URL(string: Endpoints.digimonWiki+(digimon.cardnumber!))!)
             }
         }
-    }
     func getShadowColour(digimonColor: String){
         switch digimonColor{
         case "Yellow":
@@ -115,6 +148,6 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(digimon: DigimonEntity(context: PersistenceController.shared.container.viewContext))
+        DetailsView(digimon: DigimonEntity(context: PersistenceController.shared.container.viewContext), coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext))
     }
 }

@@ -62,24 +62,6 @@ class CoreDataManager: CoreDataOperationalProtocol {
         }
     }
     
-    private func deleteAll() async {
-        
-        let digimonList = await self.getDigimonDataFromDatabase()
-        
-        await PersistenceController.shared.container.performBackgroundTask { (privateContext) in
-            digimonList.forEach { digimon in
-                privateContext.delete(digimon)
-            }
-            
-            do {
-                try privateContext.save()
-                print("DB Cleared")
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }
-        
-    }
     
     func deleteTable() async {
         let digimonFetch: NSFetchRequest<NSFetchRequestResult> = DigimonEntity.fetchRequest()
@@ -96,7 +78,14 @@ class CoreDataManager: CoreDataOperationalProtocol {
             let randomDigimon = result[randomIndex]
             return randomDigimon
         }
+    
+    func toggleFavourite(digimon: DigimonEntity) {
+
+            digimon.isfavourited.toggle()
+            try? context.save()
         
     }
+        
+}
     
     
