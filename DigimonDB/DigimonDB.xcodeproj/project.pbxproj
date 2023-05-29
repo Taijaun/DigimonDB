@@ -37,6 +37,7 @@
 		DC45E4E92A24E64B000478A3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4E82A24E64B000478A3 /* CoreDataManager.swift */; };
 		DC45E4EB2A2510A6000478A3 /* IntroStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC45E4EA2A2510A6000478A3 /* IntroStoryboard.storyboard */; };
 		DC45E4ED2A2510C8000478A3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4EC2A2510C8000478A3 /* IntroViewController.swift */; };
+		DC45E4F22A251FA6000478A3 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4F12A251FA6000478A3 /* StartScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		DC45E4E82A24E64B000478A3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DC45E4EA2A2510A6000478A3 /* IntroStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IntroStoryboard.storyboard; sourceTree = "<group>"; };
 		DC45E4EC2A2510C8000478A3 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		DC45E4F12A251FA6000478A3 /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,9 @@
 		DC45E4BA2A24BD0F000478A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC45E4D52A24C041000478A3 /* EntryPoint.swift */,
+				DC45E4F12A251FA6000478A3 /* StartScreen.swift */,
+				DC45E4EE2A2515CB000478A3 /* UIKit */,
 				DC45E4BF2A24BD66000478A3 /* Shared */,
 				DC45E4C02A24BD71000478A3 /* Tab 1 */,
 				DC45E4C12A24BD76000478A3 /* Tab 2 */,
@@ -250,9 +255,6 @@
 				DC45E4E42A24CDB9000478A3 /* CustomGridCell.swift */,
 				DC45E4C32A24BDA0000478A3 /* CustomTabView.swift */,
 				DC45E4C52A24BDBB000478A3 /* DetailsView.swift */,
-				DC45E4D52A24C041000478A3 /* EntryPoint.swift */,
-				DC45E4EA2A2510A6000478A3 /* IntroStoryboard.storyboard */,
-				DC45E4EC2A2510C8000478A3 /* IntroViewController.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -281,6 +283,15 @@
 				DC45E4CF2A24BE1A000478A3 /* SettingsView.swift */,
 			);
 			path = "Tab 3";
+			sourceTree = "<group>";
+		};
+		DC45E4EE2A2515CB000478A3 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				DC45E4EA2A2510A6000478A3 /* IntroStoryboard.storyboard */,
+				DC45E4EC2A2510C8000478A3 /* IntroViewController.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +433,7 @@
 			files = (
 				DC45E4ED2A2510C8000478A3 /* IntroViewController.swift in Sources */,
 				DC45E4E32A24C872000478A3 /* NetworkManager.swift in Sources */,
+				DC45E4F22A251FA6000478A3 /* StartScreen.swift in Sources */,
 				DC45E4932A24BC94000478A3 /* Persistence.swift in Sources */,
 				DC45E4E72A24E62E000478A3 /* CoreDataOperationsProtocol.swift in Sources */,
 				DC45E4CA2A24BDE9000478A3 /* UserSelectView.swift in Sources */,

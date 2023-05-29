@@ -28,10 +28,10 @@ struct MainGridView: View {
         VStack{
 
             ScrollView(.vertical){
-                LazyVGrid(columns: columns, spacing: 15){
+                LazyVGrid(columns: columns, spacing: 10){
                     ForEach(fetchedDigimon, id: \.self){ digimon in
                         Button {
-                            coordinator.goToDetailsScreen(digimon: digimon)
+                            coordinator.goToDetailsScreen(digimon: digimon, color: digimon.color ?? "")
                         } label: {
                             CustomGridCell(digimon: digimon)
                         }
@@ -39,16 +39,8 @@ struct MainGridView: View {
                     }
                 }
             }
-        }.task {
-            await digimonViewModel.getDigimonList(urlString: Endpoints.DigimonCardEndpoint, coreDataManager: CoreDataManager(context: viewContext))
-            
-            // Print the db file path
-            guard let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {return}
-            
-            let sqlitePath = url.appendingPathComponent("DigimonDB")
-            print(sqlitePath)
-
         }
+        .navigationBarHidden(true)
     }
 }
 

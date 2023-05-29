@@ -11,7 +11,7 @@ struct EntryPoint: View {
     @EnvironmentObject var coordinator: Coordinator
     var body: some View {
         NavigationStack(path: $coordinator.navigationPath) {
-            coordinator.getAppPage(page: .tabView)
+            coordinator.getAppPage(page: .launchScreen)
                 .navigationDestination(for: AppPages.self) { navigation in
                     coordinator.getAppPage(page: navigation)
                 }

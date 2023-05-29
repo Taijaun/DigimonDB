@@ -13,6 +13,7 @@ struct RandomCardView: View {
     
     var coreDataManager: CoreDataManager?
     @State var digimon: DigimonEntity?
+    @EnvironmentObject var coordinator: Coordinator
 
     
     @Environment(\.managedObjectContext) var viewContext
@@ -29,7 +30,14 @@ struct RandomCardView: View {
             }
             
             if digimon != nil {
-                KFImage(URL(string: digimon?.image_url ?? Endpoints.defaultImage))
+                Button {
+                    coordinator.goToDetailsScreen(digimon: digimon!, color: digimon?.color ?? "")
+                } label: {
+                    KFImage(URL(string: digimon?.image_url ?? Endpoints.defaultImage))
+                        .cornerRadius(20.0)
+                }
+
+                
             } else {
                 KFImage(URL(string: Endpoints.defaultImage))
             }

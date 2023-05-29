@@ -14,6 +14,7 @@ class Coordinator: ObservableObject {
     
     @Published var navigationPath = NavigationPath()
     var digimon: DigimonEntity?
+    var digimonCardColor: String?
     
     func goToMainScreen(){
         navigationPath.append(AppPages.mainGrid)
@@ -35,9 +36,14 @@ class Coordinator: ObservableObject {
         navigationPath.append(AppPages.settings)
     }
     
-    func goToDetailsScreen(digimon: DigimonEntity){
+    func goToDetailsScreen(digimon: DigimonEntity, color: String){
         self.digimon = digimon
+        self.digimonCardColor = color
         navigationPath.append(AppPages.details)
+    }
+    
+    func goToTabView(){
+        navigationPath.append(AppPages.tabView)
     }
     
     @ViewBuilder
@@ -58,6 +64,8 @@ class Coordinator: ObservableObject {
             CustomTabView()
         case .details:
             DetailsView(digimon: self.digimon!)
+        case .launchScreen:
+            StartScreen(digimonViewModel: DigimonCardViewModel(manager: NetworkManager()))
             
         default:
             EmptyView()
@@ -76,4 +84,5 @@ enum AppPages{
     case randomCards
     case settings
     case details
+    case launchScreen
 }

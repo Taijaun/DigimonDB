@@ -10,18 +10,20 @@ import Kingfisher
 
 struct DetailsView: View {
     var digimon: DigimonEntity
+    @State var color: Color?
     
     var body: some View {
         VStack{
             ZStack {
-                Color(UIColor(named: digimon.color ?? "white") ?? .lightGray)
+                Color(UIColor(color ?? .clear))
+                //Color(UIColor(named: digimon.color ?? "white") ?? .lightGray)
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack{
                     // Image
                     KFImage(URL(string: digimon.image_url ?? Endpoints.defaultImage))
                         .resizable()
-                        .frame(width: 335.0, height: 385.0)
+                        .frame(width: 375.0, height: 415.0)
                         .cornerRadius(20.0)
                         .aspectRatio(contentMode: .fit)
                         .edgesIgnoringSafeArea(.top)
@@ -54,7 +56,7 @@ struct DetailsView: View {
                                         .padding()
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 16)
-                                                .stroke(.red, lineWidth: 4)
+                                                .stroke(color ?? .clear, lineWidth: 4)
                                             )
                                         
                                         Spacer()
@@ -65,7 +67,7 @@ struct DetailsView: View {
                                         .padding()
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 16)
-                                                .stroke(.red, lineWidth: 4)
+                                                .stroke(color ?? .clear, lineWidth: 4)
                                             )
                                     }
                                     
@@ -84,11 +86,29 @@ struct DetailsView: View {
                     .background(Color.white)
                     .cornerRadius(40.0)
                 }
-                
-                HStack{
-                    
-                }
+            }.onAppear(){
+                getShadowColour(digimonColor: digimon.color ?? "")
             }
+        }
+    }
+    func getShadowColour(digimonColor: String){
+        switch digimonColor{
+        case "Yellow":
+            self.color = .yellow
+        case "Red":
+            self.color = .red
+        case "Green":
+            self.color = .green
+        case "Black":
+            self.color = .black
+        case "Purple":
+            self.color = .purple
+        case "Colorless":
+            self.color = .clear
+        case "Blue":
+            self.color = .blue
+        default:
+            self.color = .clear
         }
     }
 }
