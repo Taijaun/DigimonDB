@@ -20,3 +20,4 @@ Async await, Protocols
 Unit tests for success and failure on api calls, Mocked the responses using dummy data json files and a mock NetworkAPIManager
 
 # Screenshots
+![Simulator Screenshot - iPhone 14 Pro - 2023-05-30 at 09 25 23](https://github.com/Taijaun/DigimonDB/assets/68790661/4276e3ad-b660-4645-9a8a-1665976cf3c4)
