@@ -46,6 +46,21 @@ final class DigimonCardViewModelTests: XCTestCase {
         XCTAssertNotNil(error)
         XCTAssertEqual(error, NetworkingError.parsingError)
     }
+    
+    func testApiCallWithInvalidUrl() async throws {
+        let coreDataManager = TestCoreDataManager(mainContext: TestCoreDataStack().persistentContainer.viewContext, coreDataStack: TestCoreDataStack())
+        XCTAssertNotNil(coreDataManager)
+        let digimonViewModel = await DigimonCardViewModel(manager: FakeNetworkManager(), coreDataManager: coreDataManager)
+        XCTAssertNotNil(digimonViewModel)
+        
+        await digimonViewModel.getDigimonList(urlString: "", coreDataManager: coreDataManager)
+        let digimonTestList = await digimonViewModel.digimonList
+        XCTAssertEqual(digimonTestList.count, 0)
+        
+        let error = await digimonViewModel.customisedError
+        XCTAssertNotNil(error)
+        XCTAssertEqual(error, NetworkingError.invalidURL)
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
