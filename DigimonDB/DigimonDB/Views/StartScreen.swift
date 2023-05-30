@@ -16,7 +16,7 @@ struct StartScreen: View {
     @State var startOpacity = 0.0
     @Environment(\.managedObjectContext) var viewContext
     @StateObject var digimonViewModel: DigimonCardViewModel
-    let coreDataManager: CoreDataOperationalProtocol
+//    let coreDataManager: CoreDataOperationalProtocol
     
     var body: some View {
         VStack{
@@ -56,7 +56,7 @@ struct StartScreen: View {
             }
             
         }.task {
-            let dbList = await coreDataManager.getDigimonDataFromDatabase()
+            let dbList = await digimonViewModel.coreDataManager.getDigimonDataFromDatabase()
             if dbList.count == 0 {
                 await digimonViewModel.getDigimonList(urlString: Endpoints.DigimonCardEndpoint, coreDataManager: CoreDataManager(context: viewContext))
             }
@@ -88,7 +88,7 @@ struct StartScreen: View {
     
     struct StartScreen_Previews: PreviewProvider {
         static var previews: some View {
-            StartScreen(digimonViewModel: DigimonCardViewModel(manager: NetworkManager()), coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext))
+            StartScreen(digimonViewModel: DigimonCardViewModel(manager: NetworkManager(), coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext)))
         }
     }
 }

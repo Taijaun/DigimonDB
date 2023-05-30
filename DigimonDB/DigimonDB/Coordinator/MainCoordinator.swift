@@ -51,7 +51,7 @@ class Coordinator: ObservableObject {
         
         switch page {
         case .mainGrid:
-            MainGridView(digimonViewModel: DigimonCardViewModel(manager: NetworkManager()))
+            MainGridView(digimonViewModel: DigimonCardViewModel(manager: NetworkManager(), coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext)))
         case .userSelection:
             UserSelectView()
         case .favouritedCards:
@@ -65,7 +65,7 @@ class Coordinator: ObservableObject {
         case .details:
             DetailsView(digimon: self.digimon!, coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext))
         case .launchScreen:
-            StartScreen(digimonViewModel: DigimonCardViewModel(manager: NetworkManager()), coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext))
+            StartScreen(digimonViewModel: DigimonCardViewModel(manager: NetworkManager(), coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext)))
             
         default:
             EmptyView()

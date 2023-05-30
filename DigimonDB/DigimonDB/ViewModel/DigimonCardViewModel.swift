@@ -15,9 +15,11 @@ class DigimonCardViewModel: ObservableObject {
     @Published private(set) var loadingState: ViewStates = .loading
     
     var manager: Networker
+    var coreDataManager: CoreDataOperationalProtocol
     
-    init(manager: Networker){
+    init(manager: Networker, coreDataManager: CoreDataOperationalProtocol){
         self.manager = manager
+        self.coreDataManager = coreDataManager
     }
     
     func getDigimonList(urlString: String, coreDataManager: CoreDataOperationalProtocol) async {

@@ -47,6 +47,6 @@ struct MainGridView: View {
 
 struct MainGridView_Previews: PreviewProvider {
     static var previews: some View {
-        MainGridView(digimonViewModel: DigimonCardViewModel(manager: NetworkManager()))
+        MainGridView(digimonViewModel: DigimonCardViewModel(manager: NetworkManager(), coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext)))
     }
 }

@@ -102,7 +102,7 @@ struct DetailsView: View {
                                     Button {
                                         webViewPresented = true
                                     } label: {
-                                        Text("Read more..")
+                                        Text("Read more")
                                     }
 
                                     

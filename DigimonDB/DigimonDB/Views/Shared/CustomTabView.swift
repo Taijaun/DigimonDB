@@ -11,7 +11,7 @@ struct CustomTabView: View {
     @Environment(\.managedObjectContext) var viewContext
     var body: some View {
         TabView{
-            MainGridView(digimonViewModel: DigimonCardViewModel(manager: NetworkManager()))
+            MainGridView(digimonViewModel: DigimonCardViewModel(manager: NetworkManager(), coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext)))
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }
