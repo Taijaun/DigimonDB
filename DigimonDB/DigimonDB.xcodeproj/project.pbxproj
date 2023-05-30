@@ -248,10 +248,10 @@
 		DC45E4BC2A24BD1E000478A3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				DC45E4BE2A24BD5E000478A3 /* Networking */,
-				DC45E4BD2A24BD59000478A3 /* CoreData */,
 				DC45E4E02A24C76C000478A3 /* Endpoints.swift */,
 				DCF225042A255266009A3ADB /* Extensions.swift */,
+				DC45E4BE2A24BD5E000478A3 /* Networking */,
+				DC45E4BD2A24BD59000478A3 /* CoreData */,
 			);
 			path = Services;
 			sourceTree = "<group>";

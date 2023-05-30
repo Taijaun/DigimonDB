@@ -10,6 +10,10 @@ import CoreData
 @testable import DigimonDB
 
 class TestCoreDataManager: CoreDataOperationalProtocol{
+    func deleteTable() async {
+        
+    }
+    
     func saveDataToDatabase(list: [DigimonDB.Digimon]) async throws {
         
     }
