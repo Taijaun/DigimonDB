@@ -45,6 +45,9 @@
 		DCF2250D2A25678B009A3ADB /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF2250C2A25678B009A3ADB /* CoreDataTests.swift */; };
 		DCF2250F2A256902009A3ADB /* TestCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF2250E2A256902009A3ADB /* TestCoreDataManager.swift */; };
 		DCF225112A257EA9009A3ADB /* FakeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF225102A257EA9009A3ADB /* FakeNetworkManager.swift */; };
+		DCF225142A2580CE009A3ADB /* testDigimon.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF225132A2580CE009A3ADB /* testDigimon.json */; };
+		DCF225162A2580EC009A3ADB /* digimon_Empty.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF225152A2580EC009A3ADB /* digimon_Empty.json */; };
+		DCF225182A258284009A3ADB /* DigimonCardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF225172A258284009A3ADB /* DigimonCardViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,9 @@
 		DCF2250C2A25678B009A3ADB /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		DCF2250E2A256902009A3ADB /* TestCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataManager.swift; sourceTree = "<group>"; };
 		DCF225102A257EA9009A3ADB /* FakeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNetworkManager.swift; sourceTree = "<group>"; };
+		DCF225132A2580CE009A3ADB /* testDigimon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testDigimon.json; sourceTree = "<group>"; };
+		DCF225152A2580EC009A3ADB /* digimon_Empty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = digimon_Empty.json; sourceTree = "<group>"; };
+		DCF225172A258284009A3ADB /* DigimonCardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigimonCardViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +193,7 @@
 				DCF225082A25664A009A3ADB /* CoreDataTests */,
 				DC45E49F2A24BC94000478A3 /* DigimonDBTests.swift */,
 				DCF225102A257EA9009A3ADB /* FakeNetworkManager.swift */,
+				DCF225172A258284009A3ADB /* DigimonCardViewModelTests.swift */,
 			);
 			path = DigimonDBTests;
 			sourceTree = "<group>";
@@ -335,6 +342,8 @@
 		DCF225122A257EB5009A3ADB /* TestJson */ = {
 			isa = PBXGroup;
 			children = (
+				DCF225132A2580CE009A3ADB /* testDigimon.json */,
+				DCF225152A2580EC009A3ADB /* digimon_Empty.json */,
 			);
 			path = TestJson;
 			sourceTree = "<group>";
@@ -459,6 +468,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF225162A2580EC009A3ADB /* digimon_Empty.json in Resources */,
+				DCF225142A2580CE009A3ADB /* testDigimon.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF225182A258284009A3ADB /* DigimonCardViewModelTests.swift in Sources */,
 				DCF225112A257EA9009A3ADB /* FakeNetworkManager.swift in Sources */,
 				DC45E4A02A24BC94000478A3 /* DigimonDBTests.swift in Sources */,
 				DCF2250B2A256677009A3ADB /* TestCoreDataStack.swift in Sources */,

@@ -1,0 +1,23 @@
+
+
+[
+  {
+    "name": "Agumon",
+    "type": "Digimon",
+    "color": "Yellow",
+    "stage": "Rookie",
+    "digi_type": "Reptile",
+    "attribute": "Virus",
+    "level": 3,
+    "play_cost": 3,
+    "evolution_cost": 3,
+    "cardrarity": "Rare",
+    "artist": "Van Gogh",
+    "dp": 200,
+    "cardnumber": "BO-115",
+    "maineffect": "",
+    "soureeffect": "",
+    "set_name": "Series 3 Booster Pack",
+    "image_url": "https://images.digimoncard.io/images/cards/BO-115.jpg"
+  }
+]
