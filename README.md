@@ -21,8 +21,8 @@ Unit tests for success and failure on api calls, Mocked the responses using dumm
 
 # Screenshots
 <img src="https://github.com/Taijaun/DigimonDB/assets/68790661/4276e3ad-b660-4645-9a8a-1665976cf3c4" alt="HomePage" width="200" height="300">
+<img src="https://github.com/Taijaun/DigimonDB/assets/68790661/05026392-9600-4ebd-a887-381a50459b2c" alt="HomePage" width="200" height="300">
 
-![Simulator Screenshot - iPhone 14 Pro - 2023-05-30 at 09 26 05](https://github.com/Taijaun/DigimonDB/assets/68790661/05026392-9600-4ebd-a887-381a50459b2c)
+<img src="https://github.com/Taijaun/DigimonDB/assets/68790661/054a3b90-c982-4bda-afdb-2d3e50cbd181" alt="HomePage" width="200" height="300">
 
-![Simulator Screenshot - iPhone 14 Pro - 2023-05-30 at 09 26 29](https://github.com/Taijaun/DigimonDB/assets/68790661/054a3b90-c982-4bda-afdb-2d3e50cbd181)
 
