@@ -12,6 +12,8 @@ class DigimonCardViewModel: ObservableObject {
     @Published var digimonList = [Digimon]()
     @Published var customisedError : NetworkingError?
     
+    @Published private(set) var loadingState: ViewStates = .loading
+    
     var manager: Networker
     
     init(manager: Networker){
@@ -21,6 +23,7 @@ class DigimonCardViewModel: ObservableObject {
     func getDigimonList(urlString: String, coreDataManager: CoreDataOperationalProtocol) async {
         guard let url = URL(string: urlString) else {
             customisedError = NetworkingError.invalidURL
+            loadingState = .error
             return
         }
         do {
@@ -29,13 +32,29 @@ class DigimonCardViewModel: ObservableObject {
             let digimonData = try JSONDecoder().decode([Digimon].self, from: data)
             self.digimonList = digimonData
             
+            
             try await coreDataManager.saveDataToDatabase(list: self.digimonList)
+            loadingState = .loaded
         } catch let error {
-            if error as? NetworkingError == .parsingError{
+            switch error{
+            case is DecodingError:
                 customisedError = .parsingError
-            } else {
+            case is URLError:
+                customisedError = .invalidURL
+            case let .dataNotFound as NetworkingError:
+                customisedError = .dataNotFound
+            case let .invalidURL as NetworkingError:
+                customisedError = .invalidURL
+            default:
                 customisedError = .dataNotFound
             }
+            
+            loadingState = .error
+//            if error as? NetworkingError == .parsingError{
+//                customisedError = .parsingError
+//            } else {
+//                customisedError = .dataNotFound
+//            }
         }
     }
 }

@@ -40,6 +40,10 @@
 		DC45E4F22A251FA6000478A3 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45E4F12A251FA6000478A3 /* StartScreen.swift */; };
 		DCF225032A254557009A3ADB /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF225022A254557009A3ADB /* WebView.swift */; };
 		DCF225052A255266009A3ADB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF225042A255266009A3ADB /* Extensions.swift */; };
+		DCF225072A2554C4009A3ADB /* CustomListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF225062A2554C4009A3ADB /* CustomListCell.swift */; };
+		DCF2250B2A256677009A3ADB /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF2250A2A256677009A3ADB /* TestCoreDataStack.swift */; };
+		DCF2250D2A25678B009A3ADB /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF2250C2A25678B009A3ADB /* CoreDataTests.swift */; };
+		DCF2250F2A256902009A3ADB /* TestCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF2250E2A256902009A3ADB /* TestCoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +99,10 @@
 		DC45E4F12A251FA6000478A3 /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		DCF225022A254557009A3ADB /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		DCF225042A255266009A3ADB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DCF225062A2554C4009A3ADB /* CustomListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListCell.swift; sourceTree = "<group>"; };
+		DCF2250A2A256677009A3ADB /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		DCF2250C2A25678B009A3ADB /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
+		DCF2250E2A256902009A3ADB /* TestCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +180,8 @@
 		DC45E49E2A24BC94000478A3 /* DigimonDBTests */ = {
 			isa = PBXGroup;
 			children = (
+				DCF225092A256659009A3ADB /* DigimonCardViewModelTests */,
+				DCF225082A25664A009A3ADB /* CoreDataTests */,
 				DC45E49F2A24BC94000478A3 /* DigimonDBTests.swift */,
 			);
 			path = DigimonDBTests;
@@ -261,6 +271,7 @@
 				DC45E4C32A24BDA0000478A3 /* CustomTabView.swift */,
 				DC45E4C52A24BDBB000478A3 /* DetailsView.swift */,
 				DCF225022A254557009A3ADB /* WebView.swift */,
+				DCF225062A2554C4009A3ADB /* CustomListCell.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -298,6 +309,23 @@
 				DC45E4EC2A2510C8000478A3 /* IntroViewController.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		DCF225082A25664A009A3ADB /* CoreDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2250A2A256677009A3ADB /* TestCoreDataStack.swift */,
+				DCF2250C2A25678B009A3ADB /* CoreDataTests.swift */,
+				DCF2250E2A256902009A3ADB /* TestCoreDataManager.swift */,
+			);
+			path = CoreDataTests;
+			sourceTree = "<group>";
+		};
+		DCF225092A256659009A3ADB /* DigimonCardViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DigimonCardViewModelTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +488,7 @@
 				DC45E4D42A24BE9F000478A3 /* MainCoordinator.swift in Sources */,
 				DCF225052A255266009A3ADB /* Extensions.swift in Sources */,
 				DC45E4E52A24CDB9000478A3 /* CustomGridCell.swift in Sources */,
+				DCF225072A2554C4009A3ADB /* CustomListCell.swift in Sources */,
 				DC45E4D22A24BE2E000478A3 /* DigimonCardViewModel.swift in Sources */,
 				DC45E4E12A24C76C000478A3 /* Endpoints.swift in Sources */,
 				DC45E4D02A24BE1A000478A3 /* SettingsView.swift in Sources */,
@@ -471,6 +500,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC45E4A02A24BC94000478A3 /* DigimonDBTests.swift in Sources */,
+				DCF2250B2A256677009A3ADB /* TestCoreDataStack.swift in Sources */,
+				DCF2250F2A256902009A3ADB /* TestCoreDataManager.swift in Sources */,
+				DCF2250D2A25678B009A3ADB /* CoreDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

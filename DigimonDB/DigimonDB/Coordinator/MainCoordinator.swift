@@ -55,7 +55,7 @@ class Coordinator: ObservableObject {
         case .userSelection:
             UserSelectView()
         case .favouritedCards:
-            FavouritedCardsView()
+            FavouritedCardsView(coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext))
         case .randomCards:
             RandomCardView()
         case .settings:

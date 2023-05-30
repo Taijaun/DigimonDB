@@ -23,7 +23,7 @@ struct StartScreen: View {
             Image("DigimonLogo")
                 .resizable()
                 .frame(width: 390.0, height: 150.0)
-                .padding(.bottom, 170)
+                .padding(.bottom, 385)
                 .shadow(radius: 95)
                 .blur(radius: logoBlur)
                 .onAppear(){
@@ -38,6 +38,7 @@ struct StartScreen: View {
             } label: {
                 Text("Tap to Start")
                     .font(.title)
+                    .foregroundColor(.black)
                     .opacity(startOpacity)
                     .onAppear(){
                         withAnimation(Animation.easeInOut(duration: 2).repeatForever().speed(1)){
@@ -69,6 +70,17 @@ struct StartScreen: View {
             print(sqlitePath)
 
         }
+        .background(
+            ZStack{
+                Image("HexBackground")
+                    .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+                    .offset(y: -75)
+                Image("DigimonGroup")
+                    .resizable()
+                    .frame(width: 500, height: 500)
+                    .offset(y: 40)
+            }
+        )
         
         
         

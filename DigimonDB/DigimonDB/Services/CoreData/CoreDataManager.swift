@@ -85,6 +85,20 @@ class CoreDataManager: CoreDataOperationalProtocol {
             try? context.save()
         
     }
+    
+    func fetchFavourites() async -> [DigimonEntity]{
+        await PersistenceController.shared.container.performBackgroundTask{ (privateContext) in
+            let digimonListFetchRequest = DigimonEntity.fetchRequest()
+            //let predicate = NSPredicate(format: "isfavourited = \(NSNumber(booleanLiteral: true))")
+            let predicate = NSPredicate(format: "isfavourited = \(true)")
+            
+            digimonListFetchRequest.predicate = predicate
+            
+            let result = (try? privateContext.fetch(digimonListFetchRequest)) ?? []
+            return result
+        }
+        
+    }
         
 }
     

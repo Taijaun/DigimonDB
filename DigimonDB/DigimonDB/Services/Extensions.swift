@@ -12,3 +12,9 @@ class ReloadViewHelper: ObservableObject{
         objectWillChange.send()
     }
 }
+
+enum ViewStates{
+    case loaded
+    case error
+    case loading
+}

@@ -1,5 +1,5 @@
 //
-//  CustomGridCell.swift
+//  CustomListCell.swift
 //  DigimonDB
 //
 //  Created by Taijaun Pitt on 29/05/2023.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Kingfisher
 
-struct CustomGridCell: View {
+struct CustomListCell: View {
     var digimon: DigimonEntity
     @State var color: Color?
     
@@ -30,6 +30,7 @@ struct CustomGridCell: View {
         }
     }
     
+    // Convert the color attribute of digimon into color
     func getShadowColour(digimonColor: String){
         switch digimonColor{
         case "Yellow":
@@ -50,23 +51,10 @@ struct CustomGridCell: View {
             self.color = .clear
         }
     }
-    
 }
 
-enum shadowColour {
-    case yellow
-    case red
-    case green
-    case black
-    case purple
-    case colorless
-    case blue
-}
-
-
-
-struct CustomGridCell_Previews: PreviewProvider {
+struct CustomListCell_Previews: PreviewProvider {
     static var previews: some View {
-        CustomGridCell(digimon: DigimonEntity(context: PersistenceController.shared.container.viewContext))
+        CustomListCell(digimon: DigimonEntity(context: PersistenceController.shared.container.viewContext))
     }
 }

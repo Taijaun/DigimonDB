@@ -20,7 +20,7 @@ struct SettingsView: View {
                         await CoreDataManager(context: viewContext).deleteTable()
                     }
                 } label: {
-                    Text("Reset all Favourites")
+                    Text("Reset all Data")
                 }
                 
                 Button {
@@ -30,7 +30,13 @@ struct SettingsView: View {
                 }
             }
             .buttonStyle(.borderedProminent)
-        }
+            .tint(.black)
+            .padding()
+        }.background(
+            ZStack{
+                Image("HexBackground")
+            }
+        )
     }
 }
 

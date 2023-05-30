@@ -41,6 +41,7 @@ struct MainGridView: View {
             }
         }
         .navigationBarHidden(true)
+        .background(Image("HexBackground"))
     }
 }
 
