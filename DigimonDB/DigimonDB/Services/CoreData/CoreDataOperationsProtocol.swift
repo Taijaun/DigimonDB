@@ -14,5 +14,6 @@ protocol CoreDataOperationalProtocol {
     func getDigimonDataFromDatabase() async -> [DigimonEntity]
     func toggleFavourite(digimon: DigimonEntity)
     func fetchFavourites() async -> [DigimonEntity]
+    func deleteTable() async
     
 }

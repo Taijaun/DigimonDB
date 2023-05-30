@@ -16,7 +16,7 @@ struct StartScreen: View {
     @State var startOpacity = 0.0
     @Environment(\.managedObjectContext) var viewContext
     @StateObject var digimonViewModel: DigimonCardViewModel
-//    let coreDataManager: CoreDataOperationalProtocol
+
     
     var body: some View {
         VStack{
@@ -41,18 +41,10 @@ struct StartScreen: View {
                     .foregroundColor(.black)
                     .opacity(startOpacity)
                     .onAppear(){
-                        withAnimation(Animation.easeInOut(duration: 2).repeatForever().speed(1)){
+                        withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true).speed(1)){
                             startOpacity = 1
                         }
                     }
-                //
-                //            Text("Tap to Start")
-                //                .font(.title)
-                //                .onAppear(){
-                //                    withAnimation(Animation.easeInOut(duration: 1.6).repeatForever(autoreverses: true)) {
-                //                        easeInOut.toggle()
-                //                    }
-                //                }.opacity(easeInOut ? 0 : 1)
             }
             
         }.task {
@@ -64,10 +56,10 @@ struct StartScreen: View {
             
             
             // Print the db file path
-            guard let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {return}
-            
-            let sqlitePath = url.appendingPathComponent("DigimonDB")
-            print(sqlitePath)
+//            guard let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {return}
+//
+//            let sqlitePath = url.appendingPathComponent("DigimonDB")
+//            print(sqlitePath)
 
         }
         .background(

@@ -59,7 +59,7 @@ class Coordinator: ObservableObject {
         case .randomCards:
             RandomCardView()
         case .settings:
-            SettingsView(coreDataManager: CoreDataManager(context: viewContext))
+            SettingsView(coreDataManager: CoreDataManager(context: viewContext), digimonCardViewModel: DigimonCardViewModel(manager: NetworkManager(), coreDataManager: CoreDataManager(context: viewContext)))
         case .tabView:
             CustomTabView()
         case .details:

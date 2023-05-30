@@ -19,7 +19,7 @@ struct CustomTabView: View {
                 .tabItem {
                     Label("Custom", systemImage: "person.fill")
                 }
-            SettingsView(coreDataManager: CoreDataManager(context: viewContext))
+            SettingsView(coreDataManager: CoreDataManager(context: viewContext), digimonCardViewModel: DigimonCardViewModel(manager: NetworkManager(), coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext)))
                 .tabItem {
                     Label("Settings", systemImage: "gearshape.fill")
                 }

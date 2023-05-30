@@ -10,21 +10,37 @@ import SwiftUI
 struct SettingsView: View {
     
     var coreDataManager: CoreDataOperationalProtocol
+    var digimonCardViewModel: DigimonCardViewModel
     @Environment(\.managedObjectContext) var viewContext
+    @State private var showAllDataAlert = false
     
     var body: some View {
         VStack{
             Group{
                 Button {
-                    Task{
-                        await CoreDataManager(context: viewContext).deleteTable()
-                    }
+                    
+//                    Task{
+//                        await CoreDataManager(context: viewContext).deleteTable()
+//                    }
+                    showAllDataAlert.toggle()
                 } label: {
                     Text("Reset all Data")
                 }
+                .alert("Warning, This will delete all DigimonDB Data", isPresented: $showAllDataAlert){
+                    Button("Delete Data", role: .destructive){
+                        Task{
+                            await digimonCardViewModel.coreDataManager.deleteTable()
+                        }
+                    }
+                    Button("Cancel", role: .cancel){
+                        
+                    }
+                }
                 
                 Button {
-                    //
+                    Task{
+                        await digimonCardViewModel.getDigimonList(urlString: Endpoints.DigimonCardEndpoint, coreDataManager: coreDataManager)
+                    }
                 } label: {
                     Text("Redownload all Cards")
                 }
@@ -42,6 +58,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext))
+        SettingsView(coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext), digimonCardViewModel: DigimonCardViewModel(manager: NetworkManager(), coreDataManager: CoreDataManager(context: PersistenceController.shared.container.viewContext)))
     }
 }
