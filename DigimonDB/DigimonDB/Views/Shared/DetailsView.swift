@@ -14,6 +14,7 @@ struct DetailsView: View {
     @State private var webViewPresented = false
     var coreDataManager: CoreDataOperationalProtocol
     @StateObject var reloadHelper = ReloadViewHelper()
+    @State var cardBlur = 50.0
     
     var body: some View {
         VStack{
@@ -21,6 +22,7 @@ struct DetailsView: View {
                 Color(UIColor(color ?? .clear))
                 //Color(UIColor(named: digimon.color ?? "white") ?? .lightGray)
                     .edgesIgnoringSafeArea(.all)
+                    .opacity(0.2)
                 
                 VStack{
                     // Image
@@ -30,6 +32,7 @@ struct DetailsView: View {
                         .cornerRadius(20.0)
                         .aspectRatio(contentMode: .fit)
                         .edgesIgnoringSafeArea(.top)
+                        .shadow(color: color ?? .clear, radius: 10)
                     
                     // Name + effect
                     VStack(alignment: .leading){
@@ -117,12 +120,16 @@ struct DetailsView: View {
                     .padding()
                     .background(Color.white)
                     .cornerRadius(40.0)
+                    .shadow(color: .black, radius: 5.0)
                 }
             }.onAppear(){
                 getShadowColour(digimonColor: digimon.color ?? "")
             }.sheet(isPresented: $webViewPresented) {
                 WebView(url: URL(string: Endpoints.digimonWiki+(digimon.cardnumber!))!)
-            }
+            }.background(
+            Image("HexBackground")
+                .offset(x:-10, y:-30)
+            )
         }
     func getShadowColour(digimonColor: String){
         switch digimonColor{

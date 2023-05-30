@@ -18,3 +18,4 @@ enum ViewStates{
     case error
     case loading
 }
+

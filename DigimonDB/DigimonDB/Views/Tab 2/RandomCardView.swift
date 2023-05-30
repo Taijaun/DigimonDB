@@ -13,7 +13,9 @@ struct RandomCardView: View {
     
     var coreDataManager: CoreDataManager?
     @State var digimon: DigimonEntity?
+    @State var color: Color?
     @EnvironmentObject var coordinator: Coordinator
+    @State var cardBlur = 50.0
 
     
     @Environment(\.managedObjectContext) var viewContext
@@ -24,10 +26,12 @@ struct RandomCardView: View {
                 Task{
                     let coreDataManager = CoreDataManager(context: viewContext)
                     self.digimon = coreDataManager.loadRandomCard()
+                    getShadowColour(digimonColor: self.digimon?.color ?? "")
+                    
                 }
             } label: {
                 Text("Generate Random Card")
-            }
+            }.buttonStyle(.borderedProminent)
             
             if digimon != nil {
                 Button {
@@ -35,6 +39,13 @@ struct RandomCardView: View {
                 } label: {
                     KFImage(URL(string: digimon?.image_url ?? Endpoints.defaultImage))
                         .cornerRadius(20.0)
+                        .shadow(color: color ?? .clear ,radius: 10.0)
+                        .blur(radius: cardBlur)
+                        .onAppear(){
+                            withAnimation(Animation.easeInOut(duration:2).speed(2)){
+                                cardBlur = 0.0
+                            }
+                        }
                 }
 
                 
@@ -42,6 +53,29 @@ struct RandomCardView: View {
                 KFImage(URL(string: Endpoints.defaultImage))
             }
 
+        }.background(
+            Image("HexBackground")
+                .offset(x: -50, y: -80)
+        )
+    }
+    func getShadowColour(digimonColor: String){
+        switch digimonColor{
+        case "Yellow":
+            self.color = .yellow
+        case "Red":
+            self.color = .red
+        case "Green":
+            self.color = .green
+        case "Black":
+            self.color = .black
+        case "Purple":
+            self.color = .purple
+        case "Colorless":
+            self.color = .clear
+        case "Blue":
+            self.color = .blue
+        default:
+            self.color = .clear
         }
     }
 }
